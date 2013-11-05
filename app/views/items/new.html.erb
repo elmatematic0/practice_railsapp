@@ -1,0 +1,29 @@
+<h1>Add a New Item</h1>
+<%= form_for :item, url: items_path do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label "Image" %>
+    <%= f.file_field :image %>
+  </p>
+  <p>
+    <%= f.label "Email Address" %>
+    <%= email_field(:user, :email_address) %>
+  </p>
+  <p>
+    <%= f.label "Address" %><br>
+    <%= f.text_field :address %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
