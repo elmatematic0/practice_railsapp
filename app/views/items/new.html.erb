@@ -9,14 +9,12 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </p>
-  <p>
-    <%= f.label "Image" %>
-    <%= f.file_field :image %>
-  </p>
+ 
   <p>
     <%= f.label "Email Address" %>
-    <%= email_field(:user, :email_address) %>
+    <%= f.text_field :email_address %>
   </p>
+ 
   <p>
     <%= f.label "Address" %><br>
     <%= f.text_field :address %>
