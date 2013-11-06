@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   # end
   
   def show
-    
+    @item = Item.find(params[:id])   #We believe redirect_to invokes show method and expects @item
   end
 
   def new
