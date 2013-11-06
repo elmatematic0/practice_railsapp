@@ -6,16 +6,21 @@ class ItemsController < ApplicationController
   
   def show
     @item = Item.find(params[:id])   #We believe redirect_to invokes show method and expects @item
+  
   end
 
   def new
-    # @item = Item.new
+    @item = Item.new
   end
   
   def create
-    @item = Item.new(item_params)
-    @item.save
-    redirect_to @item  #what is going on with redirect_to. We expected to redirect to the show method.
+    # @item = Item.new(item_params)
+    @item = Item.new(params[:item].permit(:title, :description, :email, :address))    
+     if @item.save
+       redirect_to @item #what is going on with redirect_to. We expected to redirect to the show method.
+     else
+       render 'new'
+    end        
   end 
   
   # def edit
