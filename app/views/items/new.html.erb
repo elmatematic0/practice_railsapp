@@ -1,7 +1,7 @@
 <h1>Add a New Item</h1>
 
 
-<%= form_for :item, url: items_path do |f| %>
+<%= form_for @item do |f| %>
 <% if @item.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@item.errors.count, "bitmaker") %> prohibited
