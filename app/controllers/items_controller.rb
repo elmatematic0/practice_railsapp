@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
 
-  # def index
-  # end
+  def index
+    @items = Item.all
+  end
   
   def show
     @item = Item.find(params[:id])   #We believe redirect_to invokes show method and expects @item
