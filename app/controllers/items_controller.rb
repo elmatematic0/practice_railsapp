@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
   
   def create
     # @item = Item.new(item_params)
-    @item = Item.new(params[:item].permit(:title, :description, :email, :address))    
+    @item = Item.new(item_params)  
      if @item.save
        redirect_to @item #what is going on with redirect_to. We expected to redirect to the show method.
      else
@@ -23,11 +23,18 @@ class ItemsController < ApplicationController
     end        
   end 
   
-  # def edit
-  # end
+  def edit
+   @item = Item.find(params[:id])
+  end
 
-  # def update
-  # end
+  def update
+     @item = Item.find(params[:id]) 
+     if @item.update(item_params)
+       redirect_to @item #what is going on with redirect_to. We expected to redirect to the show method.
+     else
+       render 'edit'
+    end        
+  end
 
   # def destroy
   # end

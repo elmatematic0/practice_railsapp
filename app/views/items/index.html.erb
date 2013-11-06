@@ -12,6 +12,7 @@
   <td><%= item.description %></td> 
   <td><%= item.email %></td>
   <td><%= item.address %></td>
+  <td><%= link_to 'edit', edit_item_path(item) %></td>
 </tr>
 <% end %>
 </table>
