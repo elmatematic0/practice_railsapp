@@ -7,6 +7,6 @@ class Item < ActiveRecord::Base
   # validates_format_of   :email
   #                       :with       => /^.+@.+$/,
   #                       :message    => 'email must be valid'
-
+   # test comment
   
 end
