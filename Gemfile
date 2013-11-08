@@ -26,7 +26,8 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-
+# SJ-Comment this is required to put  copy of guides in doc/guides folder of the your application
+gem 'redcarpet', '~> 2.1.1'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

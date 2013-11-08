@@ -1,4 +1,5 @@
 class Item < ActiveRecord::Base
+  has_many :reviews
   validates :title, presence: true
   validates :description, presence: true
   validates :email, presence: true

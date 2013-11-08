@@ -18,5 +18,34 @@
   <%= @item.address %>
 </p>
 
+<h2>Reviews</h2>
+<% @item.reviews.each do |review| %>
+  <p>
+    <strong>Reviewer:</strong>
+    <%= review.reviewer %>
+  </p>
+ 
+  <p>
+    <strong>Review:</strong>
+    <%= review.body %>
+  </p>
+<% end %>
+
+<h2>Add a review:</h2>
+<%= form_for([@item, @item.reviews.build]) do |f| %>
+  <p>
+    <%= f.label :reviwer %><br />
+    <%= f.text_field :reviewer %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
 <%= link_to "See All Items", "/items" %>
 <%= link_to "Edit this item", edit_item_path(@item) %>
+
